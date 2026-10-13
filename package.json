@@ -253,6 +253,11 @@
       "import": "./dist/middleware/powered-by/index.js",
       "require": "./dist/cjs/middleware/powered-by/index.js"
     },
+    "./response-time": {
+      "types": "./dist/types/middleware/response-time/index.d.ts",
+      "import": "./dist/middleware/response-time/index.js",
+      "require": "./dist/cjs/middleware/response-time/index.js"
+    },
     "./pretty-json": {
       "types": "./dist/types/middleware/pretty-json/index.d.ts",
       "import": "./dist/middleware/pretty-json/index.js",
@@ -551,6 +556,9 @@
       ],
       "powered-by": [
         "./dist/types/middleware/powered-by"
+      ],
+      "response-time": [
+        "./dist/types/middleware/response-time"
       ],
       "pretty-json": [
         "./dist/types/middleware/pretty-json"
