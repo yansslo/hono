@@ -1,0 +1,19 @@
+.github/workflows/zerobehind.yml
+  s_d7987c7fe1aa73::t_2625f45b944e70 40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8e0d00ae8bf4638e0727e8b92db855bbf2d1912a",
+  "prompts": {},
+  "sessions": {
+    "s_d7987c7fe1aa73": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "77572261-3ec7-4cf5-a987-b8e53359de5d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Yan Slobodianik <12988040+yansslo@users.noreply.github.com>"
+    }
+  }
+}
