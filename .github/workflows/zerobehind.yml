@@ -37,4 +37,4 @@ jobs:
           upstream-branch: main
           branch: main
           post-merge: pnpm install
-          test: pnpm test:node
+          test: pnpm build && pnpm exec vp test --run --project main
