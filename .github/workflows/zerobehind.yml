@@ -1,0 +1,40 @@
+name: zerobehind
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: zerobehind
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: 'Sync with upstream'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version-file: '.tool-versions'
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          cache: true
+          run_install: true
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version-file: '.tool-versions'
+      - uses: yansslo/zerobehind@main
+        with:
+          token: ${{ secrets.ZEROBEHIND_TOKEN }}
+          ai-gateway-api-key: ${{ secrets.AI_GATEWAY_API_KEY }}
+          upstream: honojs/hono
+          upstream-branch: main
+          branch: main
+          post-merge: pnpm install
+          test: pnpm test:node
