@@ -28,6 +28,8 @@ import type {
 import { COMPOSED_HANDLER } from './utils/constants'
 import { getPath, getPathNoStrict, mergePath } from './utils/url'
 
+// yansslo/hono fork: pair with `hono/response-time` to expose handler latency.
+
 const notFoundHandler: NotFoundHandler = (c) => {
   return c.text('404 Not Found', 404)
 }
