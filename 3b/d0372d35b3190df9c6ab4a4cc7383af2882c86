@@ -1,0 +1,19 @@
+src/hono-base.ts
+  s_d7987c7fe1aa73::t_441164317cb62f 31-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3bd0372d35b3190df9c6ab4a4cc7383af2882c86",
+  "prompts": {},
+  "sessions": {
+    "s_d7987c7fe1aa73": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "77572261-3ec7-4cf5-a987-b8e53359de5d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Yan Slobodianik <12988040+yansslo@users.noreply.github.com>"
+    }
+  }
+}
