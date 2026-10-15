@@ -2,7 +2,7 @@ name: zerobehind
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '17 6 * * *'
 
 permissions:
   contents: read
