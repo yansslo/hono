@@ -48,6 +48,7 @@ type GetPath<E extends Env> = (request: Request, options?: { env?: E['Bindings']
 export type HonoOptions<E extends Env> = {
   /**
    * `strict` option specifies whether to distinguish whether the last path is a directory or not.
+   * When `false`, `/hello` and `/hello/` match the same route.
    *
    * @see {@link https://hono.dev/docs/api/hono#strict-mode}
    *
