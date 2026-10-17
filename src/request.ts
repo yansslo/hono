@@ -493,12 +493,12 @@ export const cloneRawRequest = async (req: HonoRequest): Promise<Request> => {
 
   let body: BodyInit = await req[cacheKey]()
   const headers = req.header()
+  // fork: the cached body may be re-serialized, so never trust the original length
+  delete headers['content-length']
   if (cacheKey === 'json') {
     body = JSON.stringify(body)
-    delete headers['content-length']
   } else if (body instanceof FormData) {
     delete headers['content-type']
-    delete headers['content-length']
   }
 
   const requestInit: RequiredRequestInit = {
